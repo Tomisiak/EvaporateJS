@@ -26,7 +26,7 @@
 
   const scope = typeof window !== "undefined" ? window : self;
   if (!scope.File) {
-    scope.FileReader = moxie.file.FileReader;
+    // scope.FileReader = moxie.file.FileReader;
     scope.File = moxie.file.File;
   }
   console.log('scope:', scope, typeof window !== "undefined" ? window : self);
