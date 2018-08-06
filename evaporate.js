@@ -390,7 +390,7 @@
   };
   Evaporate.prototype.validateEvaporateOptions = function () {
     this.supported = !(
-    typeof File === 'undefined' ||
+    typeof FileReader === 'undefined' ||
     typeof Promise === 'undefined');
 
     if (!this.supported) {
