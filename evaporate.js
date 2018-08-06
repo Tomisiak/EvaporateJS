@@ -25,11 +25,11 @@
   var moxie = require('./moxie');
 
   const scope = typeof window !== "undefined" ? window : self;
-  if (!scope.FileReader) {
+  if (!scope.File) {
     scope.FileReader = moxie.file.FileReader;
     scope.File = moxie.file.File;
   }
-  console.log('scope:', scope);
+  console.log('scope:', scope, typeof window !== "undefined" ? window : self);
 
   var FAR_FUTURE = new Date('2060-10-22'),
       HOURS_AGO,
@@ -398,7 +398,7 @@
   };
   Evaporate.prototype.validateEvaporateOptions = function () {
     this.supported = !(
-    typeof FileReader === 'undefined' ||
+    typeof File === 'undefined' ||
     typeof Promise === 'undefined');
 
     console.log(
