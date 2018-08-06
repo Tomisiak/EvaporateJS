@@ -29,6 +29,7 @@
     scope.FileReader = moxie.file.FileReader;
     scope.File = moxie.file.File;
   }
+  console.log('scope:', scope);
 
   var FAR_FUTURE = new Date('2060-10-22'),
       HOURS_AGO,
@@ -397,7 +398,7 @@
   };
   Evaporate.prototype.validateEvaporateOptions = function () {
     this.supported = !(
-    typeof File === 'undefined' ||
+    typeof FileReader === 'undefined' ||
     typeof Promise === 'undefined');
 
     console.log(
